@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<body>
 
-<h1>Batch Archiver for Numerically Incremented Pages to Wayback Machine</h1>
+	<h1>Batch Archiver for Numerically Incremented Pages to Wayback Machine</h1>
 
-<p>This will open up a new window for each page that is fed to the Wayback Machine</p>
-
-<p>Site: (Example: "http://ncode.syosetu.com/n6266ci/" )</p>
-<input id="site">
-
-<p>Start page #:</p>
-<input id="start">
-
-<p>Final page #:</p>
-<input id="end">
-
-<button type="button" onclick="myFunction()">Post it</button>
-
-<script>
-function myFunction() {
-    var sitename, startpage, finalpage;
+	<p>This will open up a new window for each page that is fed to the Wayback Machine</p>
 	
-	sitename = document.getElementById("site").value;
-	startpage = document.getElementById("start").value;
-	finalpage = document.getElementById("end").value;
-	
-	while (startpage <= finalpage){
-	    void(window.open("http://web.archive.org/save/" + sitename + startpage + "/"))
-		startpage++;
-	}
-}
-</script>
+	<p>For best results, please use Google Chrome and allow popup windows</p>
 
-</body>
+	<p>Site: (Example: "http://ncode.syosetu.com/n6266ci/" )</p>
+		<input id="site">
+
+	<p>Start page #:</p>
+		<input id="start">
+
+	<p>Final page #:</p>
+		<input id="end">
+
+		<button type="button" onclick="myFunction()">Post it</button>
+
+
+		<script>
+			function myFunction() {
+				var sitename, startpage, finalpage;
+	
+				sitename = document.getElementById("site").value;
+				startpage = document.getElementById("start").value;
+				finalpage = document.getElementById("end").value;
+	
+				while (startpage <= finalpage){
+					void(window.open("http://web.archive.org/save/" + sitename + startpage + "/"))
+					startpage++;
+				}
+			}
+		</script>
+
+	</body>
 </html> 
